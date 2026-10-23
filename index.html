@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Shree Ganesh Balaji Family Dhaba - Digital Menu</title>
+  <meta name="description" content="Official Digital QR Menu of Shree Ganesh Balaji Family Dhaba, Dilsukhnagar, Hyderabad. 100% Pure Veg Dhaba. Browse all dishes and prices.">
+  <meta name="theme-color" content="#6d0f14">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rozha+One&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --maroon-dark: #4a070a;
+      --maroon-primary: #730f14;
+      --maroon-light: #94171d;
+      --maroon-gradient: linear-gradient(135deg, #781014 0%, #9e1920 50%, #680e12 100%);
+      --gold-dark: #916812;
+      --gold-primary: #d4af37;
+      --gold-light: #f7e096;
+      --gold-gradient: linear-gradient(135deg, #d4af37 0%, #fae596 50%, #aa7c11 100%);
+      --cream-bg: #fcf9f2;
+      --card-bg: #ffffff;
+      --veg-green: #0f8a3c;
+      --text-main: #241415;
+      --text-muted: #6e6464;
+      --border-color: #edd9b9;
+      --shadow-sm: 0 2px 8px rgba(115, 15, 20, 0.06);
+      --shadow-md: 0 6px 20px rgba(115, 15, 20, 0.1);
+      --shadow-lg: 0 12px 36px rgba(115, 15, 20, 0.16);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--cream-bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 120px;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(115, 15, 20, 0.03) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    /* Top Veg Notice Ribbon */
+    .top-ribbon {
+      background: var(--maroon-dark);
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border-bottom: 2px solid var(--gold-primary);
+      letter-spacing: 0.5px;
+    }
+    .top-ribbon span.pure-veg {
+      color: #79f29d;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* HEADER */
+    .dhaba-header {
+      background: var(--maroon-gradient);
+      color: #ffffff;
+      padding: 24px 16px 20px;
+      text-align: center;
+      position: relative;
+      border-bottom: 4px solid var(--gold-primary);
+      box-shadow: 0 6px 20px rgba(74, 7, 10, 0.4);
+      overflow: hidden;
+    }
+    .dhaba-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .logo-container {
+      max-width: 440px;
+      margin: 0 auto 12px;
+      position: relative;
+    }
+    .logo-img {
+      width: 100%;
+      height: auto;
+      max-height: 180px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+      transition: transform 0.3s ease;
+    }
+    .logo-img:hover {
+      transform: scale(1.02);
+    }
+
+    .header-subtext {
+      color: var(--gold-light);
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    /* Quick Action Buttons */
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .action-btn.call {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+    }
+    .action-btn.whatsapp {
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #ffffff;
+      box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+    }
+    .action-btn.qr-btn {
+      background: var(--gold-gradient);
+      color: var(--maroon-dark);
+      font-weight: 800;
+      box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
+      border-color: #fff;
+    }
+    .action-btn.directions {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+    }
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    }
+
+    /* STICKY BAR CONTAINER */
+    .sticky-nav-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream-bg);
+      box-shadow: 0 4px 15px rgba(115, 15, 20, 0.08);
+      border-bottom: 1px solid var(--border-color);
+      padding-top: 10px;
+    }
+
+    /* Search Input Box */
+    .search-box-container {
+      max-width: 800px;
+      margin: 0 auto 10px;
+      padding: 0 16px;
+    }
+    .search-input-group {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-input {
+      width: 100%;
+      padding: 12px 42px 12px 44px;
+      border-radius: 30px;
+      border: 2px solid var(--border-color);
+      background: #ffffff;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    .search-input:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+    }
+    .search-icon-left {
+      position: absolute;
+      left: 16px;
+      font-size: 1.1rem;
+      color: var(--maroon-primary);
+      pointer-events: none;
+    }
+    .clear-search-btn {
+      position: absolute;
+      right: 14px;
+      background: #eee;
+      border: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    /* Category Navigation Chips (Horizontal Scroll) */
+    .category-scroll-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px 16px 12px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-behavior: smooth;
+    }
+    .category-scroll-bar::-webkit-scrollbar {
+      display: none;
+    }
+    .cat-pill {
+      flex: 0 0 auto;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .cat-pill:hover {
+      border-color: var(--gold-primary);
+      background: #fffcf2;
+    }
+    .cat-pill.active {
+      background: var(--maroon-primary);
+      color: #ffffff;
+      border-color: var(--maroon-primary);
+      box-shadow: 0 4px 12px rgba(115, 15, 20, 0.25);
+    }
+    .cat-pill.active .cat-icon {
+      filter: brightness(1.2);
+    }
+
+    /* MAIN MENU CONTAINER */
+    .menu-main-container {
+      max-width: 900px;
+      margin: 20px auto 0;
+      padding: 0 16px;
+    }
+
+    /* Stats & Info Bar */
+    .menu-stats-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-bottom: 1px dashed var(--border-color);
+      padding-bottom: 8px;
+    }
+    .pure-veg-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--veg-green);
+      font-weight: 700;
+    }
+    .veg-symbol-sq {
+      width: 15px;
+      height: 15px;
+      border: 2px solid var(--veg-green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      background: #fff;
+    }
+    .veg-symbol-sq::after {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: var(--veg-green);
+      border-radius: 50%;
+    }
+
+    /* Category Section */
+    .category-section {
+      margin-bottom: 36px;
+      scroll-margin-top: 130px;
+    }
+    .category-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold-primary);
+      position: relative;
+    }
+    .category-title {
+      font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--maroon-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.5px;
+    }
+    .category-count {
+      font-size: 0.78rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      background: #f4e8d3;
+      color: var(--maroon-dark);
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Dish Cards Grid */
+    .dishes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 680px) {
+      .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .dish-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .dish-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+    }
+    .dish-card.highlight {
+      border-left: 4px solid var(--maroon-primary);
+    }
+
+    .dish-top-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .dish-veg-icon {
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .dish-info {
+      flex: 1;
+    }
+    .dish-name {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--maroon-dark);
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+    .dish-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge-special {
+      background: #fff3d6;
+      color: #925c00;
+      border: 1px solid #f2ca6b;
+    }
+    .badge-popular {
+      background: #ffebe9;
+      color: var(--maroon-primary);
+      border: 1px solid #ffccd0;
+    }
+    .badge-sweet {
+      background: #f7ecff;
+      color: #6a1b9a;
+      border: 1px solid #e1bee7;
+    }
+    .badge-spicy {
+      background: #fff0eb;
+      color: #c62828;
+      border: 1px solid #ffccbc;
+    }
+    .badge-note {
+      background: #eef2f5;
+      color: #37474f;
+    }
+
+    /* Dish Bottom Row & Pricing */
+    .dish-bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 6px;
+      padding-top: 10px;
+      border-top: 1px dashed #f0e6d6;
+    }
+    .price-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .single-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--maroon-primary);
+    }
+    .currency-symbol {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-right: 1px;
+      color: var(--gold-dark);
+    }
+
+    /* Split Price (Full & Half) */
+    .split-prices {
+      display: flex;
+      gap: 6px;
+    }
+    .price-pill {
+      background: #fbf6ee;
+      border: 1px solid var(--border-color);
+      padding: 4px 10px;
+      border-radius: 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--maroon-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.15;
+    }
+    .price-pill .price-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .price-pill .price-value {
+      color: var(--maroon-primary);
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    /* Order / Table Add Control */
+    .order-control {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .add-btn {
+      background: #fff;
+      border: 1.5px solid var(--maroon-primary);
+      color: var(--maroon-primary);
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .add-btn:hover {
+      background: var(--maroon-primary);
+      color: #ffffff;
+    }
+    .qty-counter {
+      display: none;
+      align-items: center;
+      background: var(--maroon-primary);
+      border-radius: 20px;
+      color: #fff;
+      padding: 2px 4px;
+    }
+    .qty-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      width: 26px;
+      height: 26px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qty-val {
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0 6px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    /* Empty state */
+    .no-results {
+      text-align: center;
+      padding: 40px 20px;
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px dashed var(--border-color);
+      margin-top: 20px;
+    }
+    .no-results-icon {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+
+    /* FLOATING ORDER TRAY */
+    .floating-order-tray {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      width: calc(100% - 32px);
+      max-width: 600px;
+      background: var(--maroon-dark);
+      color: #ffffff;
+      border-radius: 30px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(74, 7, 10, 0.5);
+      border: 2px solid var(--gold-primary);
+      z-index: 999;
+      transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .floating-order-tray.visible {
+      transform: translateX(-50%) translateY(0);
+    }
+    .tray-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .tray-count {
+      font-size: 0.78rem;
+      color: var(--gold-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .tray-total {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .view-bill-btn {
+      background: var(--gold-gradient);
+      color: var(--maroon-dark);
+      border: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ORDER MODAL */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .modal-backdrop.open {
+      display: flex;
+    }
+    .order-sheet {
+      background: #ffffff;
+      width: 100%;
+      max-width: 640px;
+      max-height: 85vh;
+      border-radius: 24px 24px 0 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.3s ease-out;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+    .sheet-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fbf6ee;
+      border-radius: 24px 24px 0 0;
+    }
+    .sheet-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--maroon-primary);
+    }
+    .close-sheet-btn {
+      background: #ede3d2;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #444;
+    }
+    .sheet-body {
+      padding: 16px 20px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .order-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .order-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #eee;
+    }
+    .order-item-title {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+    .order-item-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .order-item-price {
+      font-weight: 800;
+      color: var(--maroon-primary);
+    }
+    .table-input-wrapper {
+      background: #f8f4ec;
+      padding: 12px 16px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .table-input {
+      flex: 1;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+    .sheet-footer {
+      padding: 16px 20px;
+      border-top: 2px solid var(--border-color);
+      background: #fffcf7;
+    }
+    .bill-calc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--maroon-dark);
+    }
+    .whatsapp-order-btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #fff;
+      border: none;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+
+    /* FOOTER */
+    .dhaba-footer {
+      background: linear-gradient(180deg, #380507 0%, #200204 100%);
+      color: #ffffff;
+      padding: 40px 20px 30px;
+      margin-top: 60px;
+      border-top: 4px solid var(--gold-primary);
+      position: relative;
+    }
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .footer-logo {
+      max-width: 280px;
+      margin: 0 auto 16px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+    }
+    .footer-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .footer-tagline {
+      color: #d1b888;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .footer-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+    .footer-section-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .footer-address-text {
+      color: #e5ded5;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 620px;
+      margin: 0 auto 16px;
+    }
+    .footer-contact-highlight {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 175, 55, 0.15);
+      padding: 8px 18px;
+      border-radius: 30px;
+      border: 1px solid var(--gold-primary);
+    }
+    .footer-buttons-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .footer-btn {
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .footer-btn.call {
+      background: #10b981;
+      color: #fff;
+    }
+    .footer-btn.whatsapp {
+      background: #25D366;
+      color: #fff;
+    }
+    .footer-btn.map {
+      background: var(--gold-gradient);
+      color: var(--maroon-dark);
+      font-weight: 800;
+    }
+    .footer-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .footer-timings {
+      font-size: 0.85rem;
+      color: #bbb;
+      margin-top: 18px;
+    }
+    .footer-copyright {
+      margin-top: 30px;
+      font-size: 0.78rem;
+      color: #8c7676;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 16px;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--maroon-primary);
+      color: #fff;
+      border: 2px solid var(--gold-primary);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      z-index: 90;
+      transition: all 0.2s ease;
+    }
+    .back-to-top.show {
+      display: flex;
+    }
+
+    /* Print styles */
+    @media print {
+      .sticky-nav-wrapper, .floating-order-tray, .header-actions, .back-to-top {
+        display: none !important;
+      }
+      body {
+        padding-bottom: 0;
+        background: #fff;
+      }
+      .dish-card {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Ribbon -->
+  <div class="top-ribbon">
+    <span class="pure-veg">
+      <span class="veg-symbol-sq"></span> 100% PURE VEG.
+    </span>
+    <span>•</span>
+    <span>HYDERABAD'S AUTHENTIC DHABA TASTE</span>
+    <span>•</span>
+    <span>DILSUKHNAGAR</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="dhaba-header">
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="Shree Ganesh Balaji Family Dhaba Logo" class="logo-img" id="headerLogo">
+    </div>
+    
+    <div class="header-subtext">
+      ✨ PURE VEGETARIAN DELICACIES & DHABA SPECIALTIES ✨
+    </div>
+
+    <!-- Quick Action Bar -->
+    <div class="header-actions">
+      <a href="tel:9618899975" class="action-btn call">
+        📞 Call: 9618899975
+      </a>
+      <a href="https://wa.me/919618899975?text=Hi%20Balaji%20Dhaba%2C%20I%20am%20viewing%20your%20digital%20menu." target="_blank" class="action-btn whatsapp">
+        💬 WhatsApp Us
+      </a>
+      <a href="qr-card.html" class="action-btn qr-btn">
+        📱 Table QR Standee
+      </a>
+      <a href="#footer-location" class="action-btn directions">
+        📍 View Address
+      </a>
+    </div>
+  </header>
+
+  <!-- STICKY SEARCH & CATEGORY NAVIGATION -->
+  <div class="sticky-nav-wrapper">
+    <!-- Live Search -->
+    <div class="search-box-container">
+      <div class="search-input-group">
+        <span class="search-icon-left">🔍</span>
+        <input 
+          type="text" 
+          id="menuSearchInput" 
+          class="search-input" 
+          placeholder="Search 240+ dishes (e.g. Paneer Butter, Dal Tadka, Biryani, Roti...)"
+          autocomplete="off"
+        >
+        <button id="clearSearchBtn" class="clear-search-btn" title="Clear search">✕</button>
+      </div>
+    </div>
+
+    <!-- Horizontal Category Scroll -->
+    <nav class="category-scroll-bar" id="categoryNavBar" aria-label="Menu Categories">
+      <button class="cat-pill active" data-category="all">
+        <span class="cat-icon">🍽️</span> All Items
+      </button>
+      <!-- Generated via JS -->
+    </nav>
+  </div>
+
+  <!-- MAIN MENU CONTENT -->
+  <main class="menu-main-container">
+    <div class="menu-stats-bar">
+      <span class="pure-veg-tag">
+        <span class="veg-symbol-sq"></span> All Dishes are 100% Pure Vegetarian
+      </span>
+      <span id="itemsCountBadge">Showing 247 items</span>
+    </div>
+
+    <!-- Container for dynamic categories and items -->
+    <div id="menuSectionsContainer"></div>
+
+    <!-- No results placeholder -->
+    <div id="noResultsBox" class="no-results" style="display: none;">
+      <div class="no-results-icon">🍲</div>
+      <h3 style="color: var(--maroon-primary); margin-bottom: 6px;">No matching dishes found</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Try searching for another dish like "Paneer", "Manchuria", "Kofta", or "Lassi".</p>
+    </div>
+  </main>
+
+  <!-- FLOATING TABLE ORDER TRAY -->
+  <div class="floating-order-tray" id="floatingOrderTray">
+    <div class="tray-info">
+      <span class="tray-count" id="trayItemCount">0 ITEMS SELECTED</span>
+      <span class="tray-total" id="traySubtotal">₹0</span>
+    </div>
+    <button class="view-bill-btn" id="viewBillBtn">
+      📋 View Order / Bill <span style="font-size: 1.1rem;">➔</span>
+    </button>
+  </div>
+
+  <!-- ORDER / BILL MODAL -->
+  <div class="modal-backdrop" id="orderModal">
+    <div class="order-sheet">
+      <div class="sheet-header">
+        <div class="sheet-title">🧾 Table Order & Bill Summary</div>
+        <button class="close-sheet-btn" id="closeModalBtn">✕</button>
+      </div>
+      <div class="sheet-body">
+        <div class="table-input-wrapper">
+          <label for="tableNumberInput" style="font-weight: 700; color: var(--maroon-dark); font-size: 0.9rem;">
+            Table Number:
+          </label>
+          <input type="text" id="tableNumberInput" class="table-input" placeholder="e.g. Table 4 / Parcel">
+        </div>
+
+        <div id="orderItemsList" class="order-items-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+      <div class="sheet-footer">
+        <div class="bill-calc-row">
+          <span>Estimated Total:</span>
+          <span id="modalTotalAmount">₹0</span>
+        </div>
+        <button class="whatsapp-order-btn" id="sendWhatsAppOrderBtn">
+          💬 Send Order to Dhaba WhatsApp (9618899975)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="dhaba-footer" id="footer-location">
+    <div class="footer-inner">
+      <img src="assets/logo.png" alt="Balaji Dhaba Logo" class="footer-logo">
+      <h2 class="footer-title">SHREE GANESH BALAJI FAMILY DHABA</h2>
+      <p class="footer-tagline">Good Food • Great Taste • Happy Family • Pure Veg</p>
+
+      <div class="footer-card">
+        <div class="footer-section-title">
+          📍 Restaurant Location & Address
+        </div>
+        <p class="footer-address-text">
+          <strong>Address:</strong> S.R.R. Complex, 1st Floor, House No. 13-9-12, Opp. Konark Theatre opposite, Lalitha Nagar, Dilsukhnagar, Hyderabad – 60.
+        </p>
+
+        <div class="footer-section-title">
+          📞 Direct Phone & Order Contact
+        </div>
+        <div>
+          <a href="tel:9618899975" class="footer-contact-highlight">
+            📞 9618899975
+          </a>
+        </div>
+
+        <div class="footer-buttons-group">
+          <a href="tel:9618899975" class="footer-btn call">
+            📞 Call Now
+          </a>
+          <a href="https://wa.me/919618899975?text=Hello%20Balaji%20Family%20Dhaba%2C%20I%20would%20like%20to%20order%20food." target="_blank" class="footer-btn whatsapp">
+            💬 WhatsApp Order
+          </a>
+          <a href="https://maps.google.com/?q=Konark+Theatre+Dilsukhnagar+Hyderabad" target="_blank" class="footer-btn map">
+            🧭 Open in Google Maps
+          </a>
+        </div>
+
+        <div class="footer-timings">
+          🕒 <strong>Open Every Day:</strong> 11:30 AM – 11:30 PM &nbsp;|&nbsp; Dine-In • Takeaway • Family AC Seating
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        © 2026 Shree Ganesh Balaji Family Dhaba. All Rights Reserved. • S.R.R. Complex, Dilsukhnagar, Hyderabad.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button class="back-to-top" id="backToTopBtn" title="Back to top">↑</button>
+
+  <!-- Load Menu Data -->
+  <script src="menu-data.js"></script>
+  
+  <script>
+    // State management
+    const state = {
+      cart: {}, // key: "Item Name - Variant": { name, variant, price, qty }
+      currentCategory: 'all',
+      searchQuery: ''
+    };
+
+    // DOM Elements
+    const categoryNavBar = document.getElementById('categoryNavBar');
+    const menuSectionsContainer = document.getElementById('menuSectionsContainer');
+    const menuSearchInput = document.getElementById('menuSearchInput');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const itemsCountBadge = document.getElementById('itemsCountBadge');
+    const noResultsBox = document.getElementById('noResultsBox');
+    const floatingOrderTray = document.getElementById('floatingOrderTray');
+    const trayItemCount = document.getElementById('trayItemCount');
+    const traySubtotal = document.getElementById('traySubtotal');
+    const viewBillBtn = document.getElementById('viewBillBtn');
+    const orderModal = document.getElementById('orderModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const orderItemsList = document.getElementById('orderItemsList');
+    const modalTotalAmount = document.getElementById('modalTotalAmount');
+    const sendWhatsAppOrderBtn = document.getElementById('sendWhatsAppOrderBtn');
+    const tableNumberInput = document.getElementById('tableNumberInput');
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    // Initialize Category Pills
+    function initCategoryNav() {
+      MENU_CATEGORIES.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'cat-pill';
+        btn.dataset.category = cat.id;
+        btn.innerHTML = `<span class="cat-icon">${cat.icon}</span> ${cat.name}`;
+        btn.addEventListener('click', () => {
+          setActiveCategory(cat.id);
+          const targetSection = document.getElementById(`cat-${cat.id}`);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+        categoryNavBar.appendChild(btn);
+      });
+
+      // "All" button listener
+      categoryNavBar.querySelector('[data-category="all"]').addEventListener('click', () => {
+        setActiveCategory('all');
+        window.scrollTo({ top: 320, behavior: 'smooth' });
+      });
+    }
+
+    function setActiveCategory(catId) {
+      state.currentCategory = catId;
+      document.querySelectorAll('.cat-pill').forEach(pill => {
+        if (pill.dataset.category === catId) {
+          pill.classList.add('active');
+          pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        } else {
+          pill.classList.remove('active');
+        }
+      });
+    }
+
+    // Render Menu Sections and Items
+    function renderMenu() {
+      menuSectionsContainer.innerHTML = '';
+      const query = state.searchQuery.toLowerCase().trim();
+      let totalVisibleItems = 0;
+
+      MENU_CATEGORIES.forEach(cat => {
+        const matchingItems = cat.items.filter(item => {
+          if (!query) return true;
+          return item.name.toLowerCase().includes(query) || cat.name.toLowerCase().includes(query);
+        });
+
+        if (matchingItems.length === 0) return;
+
+        totalVisibleItems += matchingItems.length;
+
+        // Create Category Section
+        const section = document.createElement('section');
+        section.className = 'category-section';
+        section.id = `cat-${cat.id}`;
+
+        section.innerHTML = `
+          <div class="category-header">
+            <h2 class="category-title">
+              <span>${cat.icon}</span> ${cat.name}
+            </h2>
+            <span class="category-count">${matchingItems.length} items</span>
+          </div>
+          <div class="dishes-grid" id="grid-${cat.id}"></div>
+        `;
+
+        const grid = section.querySelector(`#grid-${cat.id}`);
+
+        matchingItems.forEach(item => {
+          const card = createDishCard(item, cat);
+          grid.appendChild(card);
+        });
+
+        menuSectionsContainer.appendChild(section);
+      });
+
+      // Update counter & empty state
+      itemsCountBadge.textContent = `Showing ${totalVisibleItems} dishes`;
+      if (totalVisibleItems === 0) {
+        noResultsBox.style.display = 'block';
+      } else {
+        noResultsBox.style.display = 'none';
+      }
+    }
+
+    // Create Individual Dish Card
+    function createDishCard(item, category) {
+      const card = document.createElement('div');
+      card.className = `dish-card ${item.special ? 'highlight' : ''}`;
+
+      // Build Tags
+      let tagsHtml = '';
+      if (item.special) tagsHtml += `<span class="badge badge-special">⭐ Special</span>`;
+      if (item.popular) tagsHtml += `<span class="badge badge-popular">🔥 Popular</span>`;
+      if (item.spicy) tagsHtml += `<span class="badge badge-spicy">🌶️ Spicy</span>`;
+      if (item.note) tagsHtml += `<span class="badge badge-sweet">${item.note}</span>`;
+
+      // Build Pricing & Order Buttons
+      let priceHtml = '';
+      if (item.prices) {
+        // Full & Half pricing
+        const halfKey = `${item.name} (Half)`;
+        const fullKey = `${item.name} (Full)`;
+        const halfQty = state.cart[halfKey]?.qty || 0;
+        const fullQty = state.cart[fullKey]?.qty || 0;
+
+        priceHtml = `
+          <div class="split-prices">
+            <div class="price-pill">
+              <span class="price-label">Half</span>
+              <span class="price-value"><span class="currency-symbol">₹</span>${item.prices.half}</span>
+              <div class="order-control" style="margin-top: 4px;">
+                <button class="add-btn" style="padding: 2px 8px; font-size: 0.72rem;" onclick="addToCart('${item.name}', 'Half', ${item.prices.half})">
+                  ${halfQty > 0 ? `+ (${halfQty})` : '+ Add'}
+                </button>
+              </div>
+            </div>
+            <div class="price-pill">
+              <span class="price-label">Full</span>
+              <span class="price-value"><span class="currency-symbol">₹</span>${item.prices.full}</span>
+              <div class="order-control" style="margin-top: 4px;">
+                <button class="add-btn" style="padding: 2px 8px; font-size: 0.72rem;" onclick="addToCart('${item.name}', 'Full', ${item.prices.full})">
+                  ${fullQty > 0 ? `+ (${fullQty})` : '+ Add'}
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        // Single price
+        const itemKey = `${item.name} - Single`;
+        const itemQty = state.cart[itemKey]?.qty || 0;
+
+        priceHtml = `
+          <div class="price-container">
+            <span class="single-price"><span class="currency-symbol">₹</span>${item.price}</span>
+          </div>
+          <div class="order-control">
+            <button class="add-btn" onclick="addToCart('${item.name}', 'Single', ${item.price})">
+              ${itemQty > 0 ? `✓ Added (${itemQty})` : '+ Add'}
+            </button>
+          </div>
+        `;
+      }
+
+      card.innerHTML = `
+        <div>
+          <div class="dish-top-row">
+            <div class="veg-symbol-sq dish-veg-icon" title="Pure Veg"></div>
+            <div class="dish-info">
+              <div class="dish-name">${item.name}</div>
+              <div class="dish-tags">${tagsHtml}</div>
+            </div>
+          </div>
+        </div>
+        <div class="dish-bottom-row">
+          ${priceHtml}
+        </div>
+      `;
+
+      return card;
+    }
+
+    // Cart Management
+    window.addToCart = function(name, variant, price) {
+      const key = `${name} (${variant})`;
+      if (!state.cart[key]) {
+        state.cart[key] = { name, variant, price, qty: 1 };
+      } else {
+        state.cart[key].qty += 1;
+      }
+      updateCartTray();
+      renderMenu(); // Re-render to update counters on cards
+    };
+
+    window.removeFromCart = function(key) {
+      if (state.cart[key]) {
+        state.cart[key].qty -= 1;
+        if (state.cart[key].qty <= 0) {
+          delete state.cart[key];
+        }
+      }
+      updateCartTray();
+      renderModalOrderList();
+      renderMenu();
+    };
+
+    function updateCartTray() {
+      let totalQty = 0;
+      let totalPrice = 0;
+
+      Object.values(state.cart).forEach(item => {
+        totalQty += item.qty;
+        totalPrice += (item.qty * item.price);
+      });
+
+      if (totalQty > 0) {
+        trayItemCount.textContent = `${totalQty} ITEM${totalQty > 1 ? 'S' : ''} SELECTED`;
+        traySubtotal.textContent = `₹${totalPrice}`;
+        floatingOrderTray.classList.add('visible');
+      } else {
+        floatingOrderTray.classList.remove('visible');
+      }
+    }
+
+    // Modal Sheet
+    function renderModalOrderList() {
+      orderItemsList.innerHTML = '';
+      let total = 0;
+
+      const items = Object.entries(state.cart);
+      if (items.length === 0) {
+        orderItemsList.innerHTML = `<p style="text-align: center; color: #888; padding: 20px;">No items selected yet. Tap "+ Add" on any dish!</p>`;
+        modalTotalAmount.textContent = '₹0';
+        return;
+      }
+
+      items.forEach(([key, item]) => {
+        const itemSubtotal = item.qty * item.price;
+        total += itemSubtotal;
+
+        const row = document.createElement('div');
+        row.className = 'order-item-row';
+        row.innerHTML = `
+          <div>
+            <div class="order-item-title">${item.name}</div>
+            <div class="order-item-sub">Variant: ${item.variant} • ₹${item.price} each</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="qty-counter" style="display: flex;">
+              <button class="qty-btn" onclick="removeFromCart('${key}')">-</button>
+              <span class="qty-val">${item.qty}</span>
+              <button class="qty-btn" onclick="addToCart('${item.name}', '${item.variant}', ${item.price})">+</button>
+            </div>
+            <div class="order-item-price">₹${itemSubtotal}</div>
+          </div>
+        `;
+        orderItemsList.appendChild(row);
+      });
+
+      modalTotalAmount.textContent = `₹${total}`;
+    }
+
+    // Event Listeners
+    viewBillBtn.addEventListener('click', () => {
+      renderModalOrderList();
+      orderModal.classList.add('open');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      orderModal.classList.remove('open');
+    });
+
+    orderModal.addEventListener('click', (e) => {
+      if (e.target === orderModal) {
+        orderModal.classList.remove('open');
+      }
+    });
+
+    // Send WhatsApp Order
+    sendWhatsAppOrderBtn.addEventListener('click', () => {
+      const items = Object.values(state.cart);
+      if (items.length === 0) {
+        alert('Please add items to your order first!');
+        return;
+      }
+
+      const table = tableNumberInput.value.trim() || 'Dine-In Customer';
+      let message = `*🍽️ ORDER FROM BALAJI FAMILY DHABA MENU*%0A`;
+      message += `*📍 Table / Type:* ${encodeURIComponent(table)}%0A`;
+      message += `-----------------------------------%0A`;
+
+      let total = 0;
+      items.forEach((item, idx) => {
+        const sub = item.qty * item.price;
+        total += sub;
+        message += `${idx + 1}. *${encodeURIComponent(item.name)}* (${item.variant}) x ${item.qty} = ₹${sub}%0A`;
+      });
+
+      message += `-----------------------------------%0A`;
+      message += `*💰 Estimated Total: ₹${total}*%0A`;
+      message += `%0APlease confirm my order. Thank you!`;
+
+      const whatsappUrl = `https://wa.me/919618899975?text=${message}`;
+      window.open(whatsappUrl, '_blank');
+    });
+
+    // Search Input Logic
+    menuSearchInput.addEventListener('input', (e) => {
+      state.searchQuery = e.target.value;
+      clearSearchBtn.style.display = state.searchQuery ? 'flex' : 'none';
+      renderMenu();
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      menuSearchInput.value = '';
+      state.searchQuery = '';
+      clearSearchBtn.style.display = 'none';
+      renderMenu();
+    });
+
+    // Scroll Observer to Highlight Active Category
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+
+      // Check current visible category
+      const sections = document.querySelectorAll('.category-section');
+      let currentSectionId = null;
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= 180 && rect.bottom >= 180) {
+          currentSectionId = sec.id.replace('cat-', '');
+        }
+      });
+
+      if (currentSectionId && currentSectionId !== state.currentCategory) {
+        setActiveCategory(currentSectionId);
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Initialize Page
+    initCategoryNav();
+    renderMenu();
+  </script>
+</body>
+</html>

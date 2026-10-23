@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balaji Family Dhaba - Table QR Standee Card</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Standalone QRCode script -->
+  <script src="assets/qrcode.min.js"></script>
+
+  <style>
+    :root {
+      --maroon-dark: #4a070a;
+      --maroon-primary: #730f14;
+      --maroon-gradient: linear-gradient(135deg, #781014 0%, #9e1920 50%, #680e12 100%);
+      --gold-primary: #d4af37;
+      --gold-light: #f7e096;
+      --gold-gradient: linear-gradient(135deg, #d4af37 0%, #fae596 50%, #aa7c11 100%);
+      --cream-bg: #fbf7ee;
+      --veg-green: #0f8a3c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #2b1113;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 60px;
+    }
+
+    /* Top Control Panel (Hidden during Print) */
+    .control-panel {
+      width: 100%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border: 2px solid var(--gold-primary);
+    }
+    .panel-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--maroon-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .url-input-group {
+      margin-bottom: 14px;
+    }
+    .url-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #555;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .url-input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1.5px solid #d8cbbe;
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: #111;
+      background: #faf7f2;
+    }
+    .url-input:focus {
+      outline: none;
+      border-color: var(--maroon-primary);
+      background: #fff;
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      padding: 9px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-print {
+      background: var(--maroon-primary);
+      color: #ffffff;
+      flex: 1;
+      justify-content: center;
+    }
+    .btn-print:hover {
+      background: #8e151b;
+      transform: translateY(-2px);
+    }
+    .btn-menu {
+      background: var(--gold-gradient);
+      color: var(--maroon-dark);
+      font-weight: 800;
+    }
+    .btn-download {
+      background: #eef2f5;
+      color: #333;
+    }
+
+    /* THE PRINTABLE STANDEE / TABLE TENT CARD */
+    .standee-card-container {
+      width: 100%;
+      max-width: 520px;
+      background: var(--cream-bg);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+      position: relative;
+      border: 8px solid var(--maroon-primary);
+      outline: 4px solid var(--gold-primary);
+      outline-offset: -12px;
+      text-align: center;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 50% 100%, rgba(115, 15, 20, 0.08) 0%, transparent 60%);
+    }
+
+    /* Ornamental Corner Accents */
+    .corner-ornament {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-color: var(--gold-primary);
+      pointer-events: none;
+    }
+    .corner-tl { top: 16px; left: 16px; border-top: 3px solid var(--gold-primary); border-left: 3px solid var(--gold-primary); }
+    .corner-tr { top: 16px; right: 16px; border-top: 3px solid var(--gold-primary); border-right: 3px solid var(--gold-primary); }
+    .corner-bl { bottom: 16px; left: 16px; border-bottom: 3px solid var(--gold-primary); border-left: 3px solid var(--gold-primary); }
+    .corner-br { bottom: 16px; right: 16px; border-bottom: 3px solid var(--gold-primary); border-right: 3px solid var(--gold-primary); }
+
+    /* Logo */
+    .card-logo-wrap {
+      margin: 10px auto 14px;
+      max-width: 380px;
+    }
+    .card-logo {
+      width: 100%;
+      height: auto;
+      max-height: 160px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+    }
+
+    /* Scan Banner */
+    .scan-header-banner {
+      background: var(--maroon-gradient);
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 12px;
+      margin: 12px auto;
+      border: 2px solid var(--gold-primary);
+      box-shadow: 0 4px 12px rgba(115, 15, 20, 0.25);
+    }
+    .scan-header-banner h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+    .scan-subtext {
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    /* QR Code Display Frame */
+    .qr-frame {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 16px;
+      display: inline-block;
+      margin: 14px auto 10px;
+      box-shadow: 0 8px 24px rgba(115, 15, 20, 0.15);
+      border: 3px solid var(--gold-primary);
+      position: relative;
+    }
+    #qrcodeCanvas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #qrcodeCanvas img, #qrcodeCanvas canvas {
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    /* Veg Badge */
+    .veg-badge-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e8f7ee;
+      border: 1.5px solid var(--veg-green);
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin: 8px auto 14px;
+      color: var(--veg-green);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .veg-sq {
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--veg-green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      background: #fff;
+    }
+    .veg-sq::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--veg-green);
+      border-radius: 50%;
+    }
+
+    /* Dhaba Features Pills */
+    .features-pill-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .feature-tag {
+      background: #f4ecdf;
+      color: var(--maroon-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 12px;
+      border: 1px solid #e2d2bd;
+    }
+
+    /* Divider */
+    .card-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+      margin: 12px auto;
+      width: 85%;
+    }
+
+    /* Footer Information */
+    .card-footer {
+      margin-top: 8px;
+      padding: 0 8px;
+    }
+    .card-phone-highlight {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--maroon-primary);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .card-address-text {
+      font-size: 0.8rem;
+      color: #4a3436;
+      line-height: 1.45;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .card-tagline {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      color: var(--gold-dark);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* Print Stylesheet */
+    @media print {
+      body {
+        background: transparent !important;
+        padding: 0 !important;
+      }
+      .control-panel {
+        display: none !important;
+      }
+      .standee-card-container {
+        box-shadow: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+        page-break-inside: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CONTROL PANEL -->
+  <div class="control-panel">
+    <div class="panel-title">
+      <span>🖨️ Table Standee Card & QR Generator</span>
+      <span style="font-size: 0.75rem; background: #e8f7ee; color: #0f8a3c; padding: 2px 8px; border-radius: 10px;">Ready</span>
+    </div>
+
+    <div class="url-input-group">
+      <label class="url-label" for="qrTargetUrl">
+        QR Code Target URL (Updates QR instantly):
+      </label>
+      <input 
+        type="text" 
+        id="qrTargetUrl" 
+        class="url-input" 
+        value="https://rushikasrithamaddula11.github.io/Menu-QR/" 
+        placeholder="https://rushikasrithamaddula11.github.io/Menu-QR/"
+      >
+      <div style="font-size: 0.72rem; color: #777; margin-top: 4px;">
+        💡 Change this to your live domain or GitHub Pages link anytime.
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-print" onclick="window.print()">
+        🖨️ Print Table Standee
+      </button>
+      <a href="index.html" class="btn btn-menu">
+        📖 Open Digital Menu
+      </a>
+      <a href="assets/balaji-menu-qr.png" download="balaji-menu-qr.png" class="btn btn-download">
+        ⬇️ QR Image
+      </a>
+    </div>
+  </div>
+
+  <!-- THE STANDEE CARD -->
+  <div class="standee-card-container" id="standeeCard">
+    <!-- Ornaments -->
+    <div class="corner-ornament corner-tl"></div>
+    <div class="corner-ornament corner-tr"></div>
+    <div class="corner-ornament corner-bl"></div>
+    <div class="corner-ornament corner-br"></div>
+
+    <!-- Dhaba Logo -->
+    <div class="card-logo-wrap">
+      <img src="assets/logo.png" alt="Shree Ganesh Balaji Family Dhaba" class="card-logo">
+    </div>
+
+    <!-- Scan Banner -->
+    <div class="scan-header-banner">
+      <h2>SCAN FOR DIGITAL MENU</h2>
+      <div class="scan-subtext">POINT YOUR CAMERA TO VIEW DISHES & RATES</div>
+    </div>
+
+    <!-- QR Code Target -->
+    <div class="qr-frame">
+      <div id="qrcodeCanvas"></div>
+    </div>
+
+    <!-- Pure Veg Badge -->
+    <div class="veg-badge-row">
+      <span class="veg-sq"></span>
+      <span>100% PURE VEG. DHABA</span>
+    </div>
+
+    <!-- Feature tags -->
+    <div class="features-pill-row">
+      <span class="feature-tag">🍛 240+ Pure Veg Curries</span>
+      <span class="feature-tag">🍲 Biryanis & Rotis</span>
+      <span class="feature-tag">👨‍👩‍👧 Family AC Seating</span>
+    </div>
+
+    <div class="card-divider"></div>
+
+    <!-- Footer Address & Contact -->
+    <div class="card-footer">
+      <div class="card-phone-highlight">
+        <span>📞 Contact:</span> <strong>9618899975</strong>
+      </div>
+      <p class="card-address-text">
+        <strong>Address:</strong> S.R.R. Complex, 1st Floor, House No. 13-9-12, Opp. Konark Theatre opposite, Lalitha Nagar, Dilsukhnagar, Hyderabad – 60.
+      </p>
+      <div class="card-tagline">
+        GOOD FOOD • GREAT TASTE • HAPPY FAMILY
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let qr = null;
+    const qrContainer = document.getElementById('qrcodeCanvas');
+    const urlInput = document.getElementById('qrTargetUrl');
+
+    function updateQRCode(urlText) {
+      qrContainer.innerHTML = '';
+      
+      // Resolve relative path to absolute URL if needed
+      let target = urlText.trim();
+      if (!target.startsWith('http://') && !target.startsWith('https://')) {
+        // Build full URL relative to current location
+        try {
+          target = new URL(target, window.location.href).href;
+        } catch (e) {
+          // fallback
+        }
+      }
+
+      if (typeof QRCode !== 'undefined') {
+        qr = new QRCode(qrContainer, {
+          text: target,
+          width: 200,
+          height: 200,
+          colorDark: '#6d0f14', // Royal Maroon
+          colorLight: '#ffffff',
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      } else {
+        // Fallback to static SVG/PNG if QRCode script isn't loaded
+        qrContainer.innerHTML = `<img src="assets/balaji-menu-qr.png" width="200" height="200" alt="QR Code">`;
+      }
+    }
+
+    urlInput.addEventListener('input', (e) => {
+      updateQRCode(e.target.value);
+    });
+
+    // Initial render
+    window.addEventListener('DOMContentLoaded', () => {
+      const defaultMenuUrl = 'https://rushikasrithamaddula11.github.io/Menu-QR/';
+      urlInput.value = defaultMenuUrl;
+      updateQRCode(defaultMenuUrl);
+    });
+  </script>
+</body>
+</html>
